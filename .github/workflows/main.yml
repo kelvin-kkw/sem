@@ -15,6 +15,10 @@ jobs:
           distribution: 'adopt'
       - name: Compile with Maven
         run: mvn compile
+      - name: Current Dir
+        run: pwd
+      - name: show ls
+        run: ls -a
       - name: Build Docker Image
         run: docker build -t semimage .
       - name: Run image
