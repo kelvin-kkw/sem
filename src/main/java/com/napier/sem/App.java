@@ -11,6 +11,12 @@ public class App
 
         // Connect to database
         a.connect();
+        // Get Employee
+        Employee emp = a.getEmployee(255530);
+        System.out.println("Error getting employee ID");
+        // Display results
+        a.displayEmployee(emp);
+        System.out.println("Error displaying employee info");
 
         // Disconnect from database
         a.disconnect();
@@ -124,6 +130,25 @@ public class App
             return null;
         }
     }
+
+
+
+    public void displayEmployee(Employee emp)
+    {
+        if (emp != null)
+        {
+            System.out.println(
+                    emp.emp_no + " "
+                            + emp.first_name + " "
+                            + emp.last_name + "\n"
+                            + emp.title + "\n"
+                            + "Salary:" + emp.salary + "\n"
+                            + emp.dept_name + "\n"
+                            + "Manager: " + emp.manager + "\n");
+        }
+    }
+
+
 
 
 }
